@@ -1,12 +1,12 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  projectId: "6yrkqj",
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx,feature}',
-    // excludeSpecPattern: 'cypress/e2e/other/*.js',
     baseUrl: 'https://web-dev.nursegrid.com',
     chromeWebSecurity: false,
     defaultCommandTimeout: 10000,
@@ -21,5 +21,11 @@ module.exports = defineConfig({
       runMode: 0,
       openMode: 1,
     },
+  },
+  env: {
+    email: 'nursegrid.automation@gmail.com',
+    password:
+      '3199599d6157d8abf5ad3ba59e2641f2a6a9573cced7333e79618e7e4c92981b',
+    tokenRequestUrl: 'https://app-dev.nursegrid.com/auth/password',
   },
 });

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 60159fe2-539e-4033-8216-1543606b3f3e"
   },
   "author": "Rich Meadows",
   "license": "ISC",
