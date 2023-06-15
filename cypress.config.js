@@ -18,8 +18,8 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     viewportWidth: 1920,
     retries: {
-      runMode: 0,
-      openMode: 0,
+      runMode: 1,
+      openMode: 1,
     },
   },
   env: {

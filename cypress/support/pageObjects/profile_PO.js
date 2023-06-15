@@ -50,10 +50,6 @@ class Profile_PO {
     this.elements.position().select(position);
   };
 
-  editEmailAddress1 = (emailAddress1) => {
-    this.elements.emailAddress1().clear().type(emailAddress1);
-  };
-
   editEmailAddress2 = (emailAddress2) => {
     this.elements.emailAddress2().clear().type(emailAddress2);
   };
