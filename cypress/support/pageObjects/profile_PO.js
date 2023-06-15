@@ -12,10 +12,11 @@ class Profile_PO {
     mobileNum1: () => cy.get('#phone-0'),
     mobileNum2: () => cy.get('#phone-1'),
     saveBtn: () => cy.get('.me-save-button'),
+    profileURL: 'https://web-dev.nursegrid.com/#/me/edit-profile',
   };
 
   navigateToProfile = () => {
-    cy.visit('https://web-dev.nursegrid.com/#/me/edit-profile');
+    cy.visit(this.elements.profileURL);
     cy.url().should('include', 'me/edit-profile');
   };
 
@@ -27,14 +28,14 @@ class Profile_PO {
     this.elements.saveBtn().click();
   };
 
-  clickToHideProfile = () => {
+  clickToUnhideProfile = () => {
     this.elements.profilePrivacy().click({ force: true });
     this.elements.profilePrivacy().should('have.class', 'ng-not-empty');
   };
 
-  clickToUnhideProfile = () => {
+  clickToHideProfile = () => {
     this.elements.profilePrivacy().click({ force: true });
-    this.elements.profilePrivacy().should('have.class', 'ng-not-empty');
+    this.elements.profilePrivacy().should('have.class', 'ng-empty');
   };
 
   editFirstName = (firstName) => {
