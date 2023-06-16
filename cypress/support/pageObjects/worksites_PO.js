@@ -10,6 +10,8 @@ class Worksites_PO {
     inputDepartmentName: () => cy.get('[tour-id="tour-search-for-department"]'),
     btnSaveWorksite: () => cy.get('.me-save-button'),
     listWorksites: () => cy.get('[class="worksite ng-scope"]'),
+    btnDeleteWorksite: () => cy.get('.me-delete-button'),
+    modalRemoveWorksite: () => cy.get('[type="submit"').contains('Remove'),
   };
 
   navigateToWorksites = () => {
@@ -61,6 +63,12 @@ class Worksites_PO {
 
   selectWorksite = (worksite) => {
     this.elements.listWorksites().contains(worksite).click({ force: true });
+    cy.wait(1000);
+  };
+
+  deleteWorksite = () => {
+    this.elements.btnDeleteWorksite().click({ force: true });
+    this.elements.modalRemoveWorksite().click({ force: true });
   };
 }
 
