@@ -23,6 +23,8 @@ describe('Validate ability to add and remove a worksite', () => {
       .searchResult()
       .should('contain', worksites.department);
     worksites_PO.selectFirstDepartmentFromResults();
+    worksites_PO.selectPositionFromDropdown(worksites.position);
+    worksites_PO.selectEmploymentTypeFromDropdown(worksites.employment);
 
     // Save Worksite and verify success via API
     cy.intercept({

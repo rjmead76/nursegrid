@@ -5,13 +5,18 @@ class Worksites_PO {
     header: () => cy.get('#me-header'),
     addWorksiteBtn: () => cy.get('.me-add-button'),
     worksitesUrl: 'https://web-dev.nursegrid.com/#/me/worksites',
-    inputFacilityName: () => cy.get('[tour-id="tour-search-for-facility"]'),
+    inputFacilityName: () =>
+      cy.get(
+        '.worksite-search-container > [placeholder="Search by name or location"]'
+      ),
     searchResult: () => cy.get('.worksite-result').first(),
-    inputDepartmentName: () => cy.get('[tour-id="tour-search-for-department"]'),
+    inputDepartmentName: () => cy.get('.worksite-search'),
     btnSaveWorksite: () => cy.get('.me-save-button'),
     listWorksites: () => cy.get('[class="worksite ng-scope"]'),
     btnDeleteWorksite: () => cy.get('.me-delete-button'),
     modalRemoveWorksite: () => cy.get('[type="submit"').contains('Remove'),
+    positionDropDown: () => cy.get('#newWorksitePositionSelect'),
+    employmentTypeDropDown: () => cy.get('#employmentTypeSelect'),
   };
 
   navigateToWorksites = () => {
@@ -55,6 +60,14 @@ class Worksites_PO {
       .searchResult()
       .find('.select-worksite')
       .click({ force: true });
+  };
+
+  selectPositionFromDropdown = (position) => {
+    this.elements.positionDropDown().select(position);
+  };
+
+  selectEmploymentTypeFromDropdown = (employment) => {
+    this.elements.employmentTypeDropDown().select(employment);
   };
 
   saveWorksite = () => {

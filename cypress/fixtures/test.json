@@ -1,0 +1,32 @@
+{
+  "error": false,
+  "status": 200,
+  "payload": {
+    "userLicenseId": 84914,
+    "userId": 1501412,
+    "state": "Wisconsin",
+    "stateLicenseNumber": "RJM2342",
+    "issueDate": "2023-11-20 00:00:00",
+    "expirationDate": "2024-01-19 00:00:00",
+    "created": "2024-01-10 05:39:53",
+    "modified": "2024-01-10 05:39:53",
+    "license": {
+      "licenseId": 176,
+      "name": "Anesthesiologist Assistant",
+      "description": null,
+      "acronym": "Anest Asst",
+      "created": "2023-11-29 03:18:05",
+      "modified": "2023-11-29 03:18:05"
+    },
+    "userFiles": [
+      {
+        "userFileId": 26605,
+        "userId": 1501412,
+        "userFilename": "licenseAttachment.jpg",
+        "link": "https://ngapi-development-files.s3.amazonaws.com/userFile/1501412-userLicense-84914-LaUrOWIOzJ2L2k13SxVd.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIRFFSEPPOCFIJURQ%2F20240110%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240110T053956Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=4aed050561efd98bfece3b4a1eb6283f38883a63930e521b8f3e9537125b0964",
+        "entityId": 84914
+      }
+    ]
+  },
+  "message": "Success"
+}

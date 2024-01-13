@@ -23,9 +23,15 @@ module.exports = defineConfig({
     },
   },
   env: {
-    email: 'nursegrid.automation@gmail.com',
+    email: 'rich_meadows76@yahoo.com',
     password:
-      '3199599d6157d8abf5ad3ba59e2641f2a6a9573cced7333e79618e7e4c92981b',
+      '2c258e993a3d2d639fe67399b47f41f1eb91aa646dbc9d04b76e56120fd69a23',
     tokenRequestUrl: 'https://app-dev.nursegrid.com/auth/password',
   },
+  // env: {
+  //   email: 'nursegrid.automation@gmail.com',
+  //   password:
+  //     '3199599d6157d8abf5ad3ba59e2641f2a6a9573cced7333e79618e7e4c92981b',
+  //   tokenRequestUrl: 'https://app-dev.nursegrid.com/auth/password',
+  // },
 });

@@ -28,7 +28,7 @@ describe('Validate Profile', () => {
     // Save Profile and verify response via intercepting API responses
     cy.intercept({
       method: 'PUT',
-      url: '**/borg/users/**',
+      url: '**/users/**',
     }).as('putName');
 
     cy.intercept({
@@ -38,7 +38,7 @@ describe('Validate Profile', () => {
 
     cy.intercept({
       method: 'POST',
-      url: '**/borg/users/**',
+      url: '**/users/**/public?**',
     }).as('postProfilePrivacy');
 
     cy.intercept({
