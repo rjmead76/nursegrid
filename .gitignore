@@ -17,3 +17,4 @@ yarn-error.log*
 # Cypress
 cypress/videos
 cypress/screenshots
+cypress/cypress.config.js
