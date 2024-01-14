@@ -78,6 +78,20 @@ class Certifications_PO {
       .saveCertificationMessage()
       .should('contain', saveMessage, { wait: 1000 });
   };
+
+  addAttachment = (filePath) => {
+    this.elements.addAttachmentsBtn().selectFile(filePath, { force: true });
+    cy.wait(1000);
+  };
+
+  clickFinishBtn = () => {
+    this.elements.finishBtn().click();
+  };
+
+  clickDeleteBtn = () => {
+    this.elements.deleteBtn().click();
+    this.elements.deleteConfirmBtn().click();
+  };
 }
 
 module.exports = new Certifications_PO();
