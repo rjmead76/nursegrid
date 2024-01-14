@@ -24,12 +24,11 @@ describe('Should be able to create and delete a license', () => {
 
   let userId = '';
   let userLicenseId = '';
-  let userFilesId = '';
 
   it('Should be possible to successfully create a license with an attachment and delete it', () => {
     licenses_PO.navigateToLicenses();
     licenses_PO.navigateToAddLicense();
-    licenses_PO.VerifyHeaderText(license.headerText);
+    licenses_PO.verifyHeaderText(license.headerText);
     licenses_PO.clickSelectLicenseBtn();
     licenses_PO.selectLicense(license.license);
     licenses_PO.clickSelectStateBtn();
@@ -76,12 +75,13 @@ describe('Should be able to create and delete a license', () => {
       );
     });
 
-    // Delete the created license
+    // Intercept license delete
     cy.intercept({
       method: 'DELETE',
       url: `**${userId}/licenses/*`,
     }).as('deleteLicense');
 
+    // Delete the created license
     licenses_PO.clickDeleteBtn();
 
     cy.wait('@deleteLicense').then(({ request, response }) => {

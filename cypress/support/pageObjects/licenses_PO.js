@@ -16,33 +16,9 @@ class Licenses_PO {
     getAllStates: () => cy.get('h3.ng-binding', { timeout: 3000 }),
     licenseNumField: () => cy.get('.license-number-input'),
     validationError: () => cy.get('span.validation-error.ng-binding.ng-scope'),
-    firstBubbleCompleted: () => cy.get('div.navigation-bubble.first.completed'),
-    issueDateField: () => cy.get('.issue-date-picker.add-license-date-picker'),
-    expirationDateField: () => cy.get('[name="expiration-date-picker"]'),
-    issueDatePrevBtn: () =>
-      cy.get(
-        '.datepicker-days > .table-condensed > thead > :nth-child(2) > .prev'
-      ),
-    expirationDateNextBtn: () =>
-      cy.get(
-        '.datepicker-days > .table-condensed > thead > :nth-child(2) > .next'
-      ),
-    datePickerSwitch: () =>
-      cy.get(
-        '.datepicker-days > .table-condensed > thead > :nth-child(2) > .datepicker-switch'
-      ),
-
-    getDay: () =>
-      cy
-        .get('.datepicker-days > .table-condensed > tbody > tr > td')
-        .not('[class="old day"]'),
-
     addAttachmentsBtn: () => cy.get('input[type=file]'),
-
     finishBtn: () => cy.get('button[class="upload-button"]'),
-
     deleteBtn: () => cy.get('.me-delete-button'),
-
     deleteConfirmBtn: () => cy.get('.vex-dialog-button-primary'),
   }; // end of Elements //----------------------------------------------------------------//
 
@@ -60,7 +36,7 @@ class Licenses_PO {
     cy.url().should('include', '/licenses/add');
   };
 
-  VerifyHeaderText = (headerText) => {
+  verifyHeaderText = (headerText) => {
     this.elements.header().should('contain', headerText);
   };
 
@@ -73,7 +49,6 @@ class Licenses_PO {
     this.elements.getAllInactiveLicenses().each(($el, index, $list) => {
       if ($el.text().includes(license)) {
         cy.wrap($el).click({ force: true });
-        cy.log('License selected');
       }
     });
   };
@@ -83,11 +58,9 @@ class Licenses_PO {
   };
 
   selectState = (state) => {
-    // cy.wait(1000);
     this.elements.getAllStates().each(($el, index, $list) => {
       if ($el.text().includes(state)) {
         cy.wrap($el).click({ force: true });
-        cy.log('State selected');
       }
     });
   };

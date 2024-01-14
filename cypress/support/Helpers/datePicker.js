@@ -2,7 +2,7 @@
 
 class DatePicker_Helper {
   elements = {
-    issueDateField: () => cy.get('.issue-date-picker.add-license-date-picker'),
+    issueDateField: () => cy.get('.issue-date-picker'),
     expirationDateField: () => cy.get('[name="expiration-date-picker"]'),
     issueDatePrevBtn: () =>
       cy.get(
